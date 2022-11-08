@@ -1,11 +1,20 @@
+        local Library =
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("NEW VIDEO OUT FOR UPDATED GPO GUI SCRIPT", "BloodTheme")
 
+        -- MAIN
+        local Main = Window:NewTab("Main")
+        local MainSection = Main:NewSection("Main")
 
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({Name = "NEW GPO COMING SOON", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
-
+MainSection:NewButton("GET VIDEO LINK", "PASTE LINK TO GOOGLE", function()
+local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
+	CoreGui:SetCore("SendNotification", {
+		-- Customizable
+		Title = "Paste To Google",
+		Text = "Copied To Clipboard",
+		Duration = 7, -- Set the duration to how much you want this to stay
+		-- More code in part 2
+	})
+    setclipboard("https://www.youtube.com/watch?v=Fxy_4YCw_j8")
+	toclipboard("https://www.youtube.com/watch?v=Fxy_4YCw_j8")
+            end)
